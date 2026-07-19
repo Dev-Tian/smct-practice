@@ -101,9 +101,7 @@ class CheckoutController extends Controller
     /**
      * Totals for a cart of products keyed by product id => quantity.
      *
-     * planted for S1: the onboarding maze — VAT is accumulated per line inside
-     * the loop, before any order-level discount could apply. "Where would a
-     * loyalty discount go without breaking VAT?" is the exercise.
+     * VAT is accumulated per line inside the loop.
      *
      * @return array{subtotal_cents: int, vat_cents: int, shipping_cents: int, total_cents: int}
      */

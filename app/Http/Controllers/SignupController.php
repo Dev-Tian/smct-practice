@@ -15,8 +15,6 @@ class SignupController extends Controller
 
     public function store(Request $request)
     {
-        // planted for S1: the off-system form — the messages below are robotic,
-        // and the signup view ignores the app's card component and tokens.
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255', 'unique:users,email'],

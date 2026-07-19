@@ -3,8 +3,6 @@
 @section('title', 'Sign up')
 
 @section('content')
-    {{-- planted for S1: the off-system form — copied in from an old internal
-         tool; ignores the app's .card component and the tokens in app.css. --}}
     <style>
         #regbox {
             width: 420px;

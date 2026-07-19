@@ -22,7 +22,6 @@
                 @foreach ($orders as $order)
                     <tr>
                         <td>#{{ $order->id }}</td>
-                        {{-- planted for S1: the N+1 — customer and items are loaded per row --}}
                         <td>{{ $order->customer->name }}</td>
                         <td>{{ $order->items->count() }}</td>
                         <td class="num">₱{{ number_format($order->total_cents / 100, 2) }}</td>

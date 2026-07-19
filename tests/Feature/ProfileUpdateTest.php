@@ -30,11 +30,9 @@ class ProfileUpdateTest extends TestCase
 
     public function test_a_profile_can_be_saved_without_a_phone_number(): void
     {
-        // planted for S1: the null-phone crash — this test EXPOSES the bug and
-        // is skipped on purpose. An empty phone input is converted to null by
-        // the framework, and ProfileUpdateRequest's phone rule has no
-        // `nullable`, so validation fails with "The phone field must be a
-        // string." Un-skip once the rule is fixed; do not fix it before S1.
+        // Known bug: an empty phone input is converted to null by the framework,
+        // and ProfileUpdateRequest's phone rule has no `nullable`, so validation
+        // fails with "The phone field must be a string." Un-skip once fixed.
         $this->markTestSkipped('Known bug: ProfileUpdateRequest phone rule is missing nullable.');
 
         $user = User::factory()->create(['phone' => null]);

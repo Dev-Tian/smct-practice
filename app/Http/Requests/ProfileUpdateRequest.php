@@ -25,9 +25,6 @@ class ProfileUpdateRequest extends FormRequest
                 'max:255',
                 Rule::unique('users')->ignore($this->user()->id),
             ],
-            // planted for S1: the null-phone crash — `nullable` is missing, so
-            // submitting the form with an empty phone (converted to null by the
-            // framework) fails the `string` rule.
             'phone' => ['string', 'max:20'],
         ];
     }
