@@ -38,8 +38,8 @@
     </div>
 
     <datalist id="quantity-options">
-        @for ($quantity = 1; $quantity <= 10; $quantity++)
+        @foreach ([1, 2, 3, 4, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50] as $quantity)
             <option value="{{ $quantity }}">
-        @endfor
+        @endforeach
     </datalist>
 @endsection
