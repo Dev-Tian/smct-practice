@@ -18,25 +18,24 @@
                     <input type="hidden" name="product_id" value="{{ $product->id }}">
                     <label class="quantity-field">
                         <span>Qty</span>
-                        <input
-                            type="number"
-                            name="quantity"
-                            value="1"
-                            min="1"
-                            inputmode="numeric"
-                            autocomplete="off"
-                        >
-                    </label>
-                    <label class="quantity-preset">
-                        <span>Quick pick</span>
-                        <select
-                            aria-label="Choose a quantity"
-                            onchange="this.closest('.add-to-cart').querySelector('[name=quantity]').value = this.value"
-                        >
-                            @for ($quantity = 1; $quantity <= 10; $quantity++)
-                                <option value="{{ $quantity }}">{{ $quantity }}</option>
-                            @endfor
-                        </select>
+                        <span class="quantity-combo">
+                            <input
+                                type="number"
+                                name="quantity"
+                                value="1"
+                                min="1"
+                                inputmode="numeric"
+                                autocomplete="off"
+                            >
+                            <select
+                                aria-label="Quick quantity choices"
+                                onchange="this.closest('.quantity-combo').querySelector('[name=quantity]').value = this.value"
+                            >
+                                @for ($quantity = 1; $quantity <= 10; $quantity++)
+                                    <option value="{{ $quantity }}">{{ $quantity }}</option>
+                                @endfor
+                            </select>
+                        </span>
                     </label>
                     <button type="submit" class="btn btn-primary">Add to cart</button>
                 </form>
