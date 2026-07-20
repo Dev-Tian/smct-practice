@@ -18,11 +18,26 @@
                     <input type="hidden" name="product_id" value="{{ $product->id }}">
                     <label>
                         Qty
-                        <input type="number" name="quantity" value="1" min="1" max="10">
+                        <input
+                            type="number"
+                            name="quantity"
+                            value="1"
+                            min="1"
+                            max="10"
+                            list="quantity-options"
+                            inputmode="numeric"
+                            autocomplete="off"
+                        >
                     </label>
                     <button type="submit" class="btn btn-primary">Add to cart</button>
                 </form>
             </x-card>
         @endforeach
     </div>
+
+    <datalist id="quantity-options">
+        @for ($quantity = 1; $quantity <= 10; $quantity++)
+            <option value="{{ $quantity }}">
+        @endfor
+    </datalist>
 @endsection
